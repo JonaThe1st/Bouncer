@@ -16,8 +16,11 @@ public:
     ~Player();
 
     qreal x() const;
+    qreal f(qreal x);
 
     void move(bool direction);
+
+    QVector2D * getTangentVectorAt(qreal x0, qreal y0, qreal r);
 
 public slots:
     void setXProperty(qreal x);
@@ -31,7 +34,6 @@ private:
 
     qreal a, b;
 
-    QVector2D * getTangentVectorAt(qreal x0, qreal y0);
 
 };
 

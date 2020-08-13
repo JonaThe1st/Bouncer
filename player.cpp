@@ -1,6 +1,7 @@
 #include "player.h"
 
 #include <QDebug>
+#include "math.h"
 
 Player::Player():
 m_x{50}
@@ -26,6 +27,11 @@ Player::~Player()
 qreal Player::x() const
 {
     return m_x;
+}
+
+qreal Player::f(qreal x)
+{
+    return b/a * sqrt(a*a-x*x);
 }
 
 // true = right; false = left
@@ -56,10 +62,8 @@ void Player::setXProperty(qreal x)
     }
 }
 
-QVector2D * Player::getTangentVectorAt(qreal x0, qreal y0)
+QVector2D * Player::getTangentVectorAt(qreal x0, qreal y0, qreal r)
 {
-    qreal m = x() + a;
 
-
-    return new QVector2D(0, 0);
+    return new QVector2D((-(a+r)*y0)/(b+r), (b+r)*x0/(a+r));
 }

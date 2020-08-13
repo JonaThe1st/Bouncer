@@ -19,6 +19,7 @@ SOURCES += \
     ball.cpp \
     main.cpp \
     mainwindow.cpp \
+    orbit.cpp \
     player.cpp \
     scene.cpp \
     util.cpp
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     ball.h \
     mainwindow.h \
+    orbit.h \
     player.h \
     scene.h \
     util.h
